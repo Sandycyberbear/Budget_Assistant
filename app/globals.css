@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --background: #edf1ea;
+  --foreground: #38413d;
+  --surface: #fcfbf8;
+  --surface-soft: #f4efe9;
+  --surface-muted: #ece6de;
+  --border: #d8d2c8;
+  --border-strong: #c2bbb1;
+  --muted: #7c756c;
+  --muted-strong: #655f57;
+  --accent: #7e94a5;
+  --accent-soft: #e4ebf1;
+  --info: #8c9bb4;
+  --info-soft: #e8edf5;
+  --success: #80997b;
+  --success-soft: #e5eee1;
+  --warning: #bcab7a;
+  --warning-soft: #f4eedf;
+  --danger: #b58e86;
+  --danger-soft: #f2e5e1;
+  --lilac: #a69ab8;
+  --lilac-soft: #eee8f6;
+  --peach: #c89d86;
+  --peach-soft: #f6e9e1;
+  --sage: #9caf99;
+  --sage-soft: #e9f0e6;
+  --mist: #94a7b7;
+  --mist-soft: #e7edf3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-muted: var(--muted);
+  --color-muted-strong: var(--muted-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-lilac: var(--lilac);
+  --color-lilac-soft: var(--lilac-soft);
+  --color-peach: var(--peach);
+  --color-peach-soft: var(--peach-soft);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-mist: var(--mist);
+  --color-mist-soft: var(--mist-soft);
+  --font-sans: var(--font-plus-jakarta-sans);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, #ecf2e8 0%, #f4efd9 34%, #f1dfd9 66%, #e4ebf1 100%);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--foreground);
+}

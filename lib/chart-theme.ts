@@ -1,0 +1,15 @@
+export const chartTheme = {
+  surfaceSoft: "#f4efe9",
+  surface: "#fcfbf8",
+  border: "#d8d2c8",
+  grid: "#e5ddd3",
+  tick: "#857d72",
+  tickStrong: "#5f584f",
+  spend: "#93a0b8",
+  inflow: "#84a081",
+  net: "#c19482",
+  bar: "#dfc6b4",
+  context: "#a69ab8",
+  warning: "#bcab7a",
+  tooltipShadow: "0 18px 40px -28px rgba(56, 65, 61, 0.32)",
+} as const;
