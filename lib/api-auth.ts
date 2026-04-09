@@ -5,7 +5,11 @@ import { NextResponse } from "next/server";
 type AppRouteHandler = (request: Request) => Response | Promise<Response>;
 
 function getConfiguredToken() {
-  const token = process.env.API_BEARER_TOKEN?.trim();
+  const token = (
+    process.env.API_BEARER_TOKEN ??
+    process.env.BUDGET_ASSISTANT_API_BEARER_TOKEN ??
+    process.env.BEARER_TOKEN
+  )?.trim();
   return token ? token : null;
 }
 
@@ -52,4 +56,8 @@ export function withApiBearerAuth(handler: AppRouteHandler): AppRouteHandler {
 
     return handler(request);
   };
+}
+
+export function isApiBearerAuthConfigured() {
+  return Boolean(getConfiguredToken());
 }

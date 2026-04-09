@@ -128,6 +128,7 @@ NOTION_API_TOKEN=ntn_your_real_token
 NOTION_EXPENSES_DATA_SOURCE_ID=d8fc924d-b1e4-4ae4-bd66-0132c5997028
 DATABASE_PATH=/data/budget-assistant.sqlite
 API_BEARER_TOKEN=use_a_long_random_secret_here
+BUDGET_ASSISTANT_API_BEARER_TOKEN=optional_fallback_if_needed
 HOSTNAME=0.0.0.0
 ```
 
