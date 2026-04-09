@@ -24,7 +24,9 @@ function withBearerSecurity<T extends Record<string, unknown>>(operation: T) {
 }
 
 export async function GET(request: Request) {
-  const origin = new URL(request.url).origin;
+  const requestUrl = new URL(request.url);
+  const publicDomain = process.env.RAILWAY_PUBLIC_DOMAIN?.trim();
+  const origin = publicDomain ? `https://${publicDomain}` : requestUrl.origin;
 
   return NextResponse.json({
     openapi: "3.1.0",
