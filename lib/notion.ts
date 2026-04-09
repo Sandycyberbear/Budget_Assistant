@@ -20,8 +20,15 @@ const notionQueryResponseSchema = z.object({
 });
 
 function getNotionConfig() {
-  const token = process.env.NOTION_API_TOKEN;
-  const dataSourceId = process.env.NOTION_EXPENSES_DATA_SOURCE_ID ?? DEFAULT_DATA_SOURCE_ID;
+  const token = (
+    process.env.NOTION_API_TOKEN ??
+    process.env.BUDGET_ASSISTANT_NOTION_API_TOKEN
+  )?.trim();
+  const dataSourceId = (
+    process.env.NOTION_EXPENSES_DATA_SOURCE_ID ??
+    process.env.BUDGET_ASSISTANT_NOTION_EXPENSES_DATA_SOURCE_ID ??
+    DEFAULT_DATA_SOURCE_ID
+  )?.trim();
 
   return {
     token,
@@ -220,4 +227,8 @@ export function getNotionStatus() {
     message: "Expenses are synced from your Notion Simple Budget data source.",
     dataSourceId: config.dataSourceId,
   };
+}
+
+export function isNotionConfigured() {
+  return getNotionStatus().configured;
 }
